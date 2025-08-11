@@ -23,7 +23,7 @@ A Model Context Protocol (MCP) server that provides tools for working with iOS L
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone git@github.com:iamnotagentleman/localizable-xcstrings-mcp.git
 cd localizable-xcstrings-mcp
 ```
 
@@ -88,9 +88,7 @@ uv sync
 
 Use the fastmcp install command:
 ```bash
-fastmcp install claude-code server.py --name "localizable-xcstrings" \
-  --env OPENAI_API_KEY=your-api-key \
-  --env OPENAI_MODEL=gpt-4o-mini
+claude mcp add localizable-xcstrings --scope user -- uv run --with fastmcp fastmcp run server.py
 ```
 
 ### 3. Restart Claude Code
@@ -140,10 +138,6 @@ All configuration is managed through environment variables in the `.env` file:
 | `OPENAI_API_KEY` | Yes | - | Your OpenAI API key |
 | `OPENAI_MODEL` | No | `gpt-4o-mini` | OpenAI model for translations |
 | `OPENAI_BASE_URL` | No | - | Custom API base URL |
-| `TRANSLATION_CHUNK_SIZE` | No | `50` | Strings per API request |
-| `TRANSLATION_TEMPERATURE` | No | `0.3` | Model creativity (0.0-1.0) |
-| `TRANSLATION_MAX_CONCURRENT_CHUNKS` | No | `2` | Max concurrent requests |
-| `TRANSLATION_RATE_LIMIT_DELAY` | No | `1.0` | Delay between requests (seconds) |
 
 ## File Format Support
 
@@ -155,14 +149,6 @@ This tool works with Xcode 15+ String Catalog files (.xcstrings). These files us
 - **Async Concurrency**: Up to 3 chunks processed simultaneously
 - **Token Limit Protection**: Prevents API context limit issues
 - **Progress Reporting**: Shows processing status for large jobs
-- **Cost-Effective**: Uses OpenAI API for translations
-
-## Testing
-
-Run the test suite:
-```bash
-uv run pytest tests/test_xcstrings_tools.py -v
-```
 
 ## Contributing
 
