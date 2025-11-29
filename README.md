@@ -2,6 +2,10 @@
 
 A Model Context Protocol (MCP) server that provides tools for working with iOS Localizable.xcstrings files. This tool enables automated translation workflows and localization management for iOS/macOS projects using Xcode String Catalogs.
 
+<a href="https://glama.ai/mcp/servers/@iamnotagentleman/localizable-xcstrings-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@iamnotagentleman/localizable-xcstrings-mcp/badge" alt="Localizable XStrings Server MCP server" />
+</a>
+
 ## Features
 
 - **Extract Language Support**: Get all supported language codes from .xcstrings files
